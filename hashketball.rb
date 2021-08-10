@@ -1,4 +1,7 @@
 # Write your code below game_hash
+
+require "pry"
+
 def game_hash
   {
     home: {
@@ -127,3 +130,30 @@ def game_hash
 end
 
 # Write code here
+
+def num_points_scored(x)
+  game_hash.each do |stadium, data|
+    if x = "Alan Anderson" || "Reggie Evans" || "Brook Lopez" || "Mason Plumlee" || "Jason Terry"
+      data.each do |key, value|
+        if key == :players
+          value.each do |playername|
+            if playername[:player_name] == "#{x}"
+              binding.pry
+              puts playername[:points]
+            end
+          end
+        end
+      end
+    elsif x = "Jeff Adrien" || "Bismack Biyombo" || "DeSagna Diop" || "Ben Gordon" || "Kemba Walker"
+      data.each do |key, value|
+        if key == :players
+          value.each do |playername|
+            if playername[:player_name] == "#{x}"
+              puts playername[:points]
+            end
+          end
+        end
+      end
+    end
+  end 
+end
